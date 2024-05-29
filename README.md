@@ -4,7 +4,7 @@ Tags: disable, functionalities, security, optimization, speed
 Requires at least: 5.0
 Tested up to: 6.5.3
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -142,8 +142,37 @@ Disable Master is a comprehensive plugin that allows you to disable various Word
 
 - **Disable Heartbeat**
   - Disabled: WordPress heartbeat API remains enabled.
+  - Limit: WordPress heartbeat API is limited to a 60-second interval to reduce server load.
   - Enabled: WordPress heartbeat API is disabled. This can conserve server resources and improve performance.
 
+- **Disable admin-ajax.php on Front-End**
+  - Disabled: admin-ajax.php remains enabled on the front-end.
+  - Enabled: admin-ajax.php is disabled on the front-end to improve performance.
+
+- **Remove Query Strings from Static Resources**
+  - Disabled: Query strings remain enabled on static resources.
+  - Enabled: Query strings are removed from static resources to improve caching and performance.
+  
+- **Disable API Request Logging**
+  - Disabled: API request logging remains enabled.
+  - Enabled: API request logging is disabled. This can reduce server load.
+
+- **Disable WP-Cron and Use Real Cron Jobs**
+  - Disabled: WP-Cron remains enabled.
+  - Enabled: WP-Cron is disabled and real cron jobs are used. This can make scheduled tasks more efficient.
+
+- **Disable Post Locking**
+  - Disabled: Post locking remains enabled.
+  - Enabled: Post locking is disabled. Useful for single-author or small team sites.
+
+- **Disable Uploads**
+  - Disabled: Upload functionality remains enabled.
+  - Enabled: Disables the ability to upload media, themes, and plugins. Useful for preventing unauthorized uploads and enhancing security.
+
+- **Disable Site Health**
+  - Disabled: Site Health checks remain enabled.
+  - Enabled: Site Health checks are disabled. This can be useful to prevent unnecessary load and simplify the admin interface.
+  
 == Installation ==
 
 1. Upload the `disable-master` folder to the `/wp-content/plugins/` directory.
@@ -172,14 +201,67 @@ Disable Master is designed to work seamlessly with other plugins. However, if yo
 
 == Changelog ==
 
+= 1.1.0 =
+* Added new feature: Disable Uploads - This feature prevents all file uploads (media, plugins, themes) to enhance security.
+* Added new feature: Disable Site Health - This feature disables Site Health checks to reduce load and simplify the admin interface.
+* Refactored the 'features' directory to organize functionalities into classes for better code management.
+* Added an autoloading mechanism.
+* Added new features:
+  - Disable API Request Logging
+  - Disable WP-Cron and Use Real Cron Jobs
+  - Disable Post Locking
+* Added 'System Check' page in the admin panel. This page allows you to check for potential conflicts with themes and other plugins.
+* Added 'Buy Me a Coffee' button to the info popup in the admin panel.
+* Various language file updates and bug fixes.
+* Added options to disable API request logging, WP-Cron, post locking, and screen options/help tabs.
+* Added option to disable `admin-ajax.php` on the front-end.
+* Added option to remove query strings from static resources.
+* Enhanced Heartbeat API control with options to disable or limit the interval.
+* Improved UI/UX design and responsiveness.
+* Added language support for Turkish.
+* Enhanced security and performance.
+
 = 1.0.0 =
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+* Added new feature: Disable Uploads - This feature prevents all file uploads (media, plugins, themes) to enhance security.
+* Added new feature: Disable Site Health - This feature disables Site Health checks to reduce load and simplify the admin interface.
+* Refactored the 'features' directory to organize functionalities into classes for better code management.
+* Added an autoloading mechanism.
+* Added new features:
+  - Disable API Request Logging
+  - Disable WP-Cron and Use Real Cron Jobs
+  - Disable Post Locking
+* Added 'System Check' page in the admin panel. This page allows you to check for potential conflicts with themes and other plugins.
+* Added 'Buy Me a Coffee' button to the info popup in the admin panel.
+* Various language file updates and bug fixes.
+* Added options to disable API request logging, WP-Cron, post locking, and screen options/help tabs.
+* Added option to disable `admin-ajax.php` on the front-end.
+* Added option to remove query strings from static resources.
+* Enhanced Heartbeat API control with options to disable or limit the interval.
+* Improved UI/UX design and responsiveness.
+* Added language support for Turkish.
+* Enhanced security and performance.
 
 = 1.0.0 =
 * Initial release.
 
 == Arbitrary section ==
 
-You can include any additional information here, such as known issues, future plans, or a list of contributors.
+**Known Issues:**
+- Currently, no known issues have been reported. If you encounter any bugs or have suggestions for improvement, please reach out to us.
+
+**Future Plans:**
+- We plan to add more advanced customization options in the upcoming versions.
+- Integration with popular caching plugins to enhance performance.
+- Detailed logging and analytics features to track the impact of disabled functionalities.
+- More granular control over individual WordPress features to provide better customization.
+
+**Contributors:**
+- Halil Kaya - Lead Developer and Maintainer
+- WordPress Turkey Team - Support, Suggestions and Development
+
+We greatly appreciate feedback and contributions from the WordPress community. If you'd like to contribute, please contact us at halil@gencmedya.com or visit our website at https://gencmedya.com. Thank you for using Disable Master!
